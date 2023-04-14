@@ -8,10 +8,11 @@ public class Pipe : MonoBehaviour
     public AudioSource audiosource;
     public Vector2 newPos;
     public Animator anim;
-
+    public bool statePipe = false;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if (statePipe == true) return;
         if (collision.gameObject.tag == "Player" && Input.GetKeyUp(KeyCode.S))
         {
             audiosource.Play();

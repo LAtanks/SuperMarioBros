@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2023-04-07T16:06:05.427-03:00
-  initializedAtString: 2023-04-07T16:06:05.427-03:00
+  lastUpdatedAtString: 2023-04-13T20:57:29.558-03:00
+  initializedAtString: 2023-04-13T19:26:34.423-03:00
   currentGitRemote:
     name: origin
-    url: SuperMarioBros
+    url: https://github.com/LAtanks/SuperMarioBros.git
     login: 
     user: 
     host: 
@@ -25,14 +25,14 @@ MonoBehaviour:
     token: 
   currentGitBranch:
     name: main
-    tracking: 
+    tracking: origin/main
   currentConfigBranch:
     name: main
     remote:
-      name: 
-      url: 
-    trackingBranch: 
+      name: origin
+      url: https://github.com/LAtanks/SuperMarioBros.git
+    trackingBranch: main
   currentConfigRemote:
     name: origin
-    url: SuperMarioBros
+    url: https://github.com/LAtanks/SuperMarioBros.git
   currentHead: 

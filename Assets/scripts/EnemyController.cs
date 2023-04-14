@@ -9,6 +9,10 @@ public class EnemyController : MonoBehaviour
     public PlayerController player;
     public SpriteRenderer sprites;
 
+    void Start(){
+        StartCoroutine(SpriteSwap());
+    }
+
     void Update()
     {
         movement = new Vector3(2 * direction, 0f, 0f);
@@ -21,6 +25,15 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
            player.Hit();
+        }
+    }
+
+    IEnumerator SpriteSwap(){
+        while(true){
+            sprites.flipX = !sprites.flipX;
+            yield return new WaitForSeconds(1f);
+            sprites.flipX = !sprites.flipX;
+            Debug.Log("test");
         }
     }
 }

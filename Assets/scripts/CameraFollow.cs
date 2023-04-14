@@ -10,7 +10,7 @@ public class CameraFollow : MonoBehaviour
     public GameObject rightBounds;
     public BoxCollider2D inPipe;
 
-
+    public bool state = false;
     public float smoothDampTime = 0.15F;
     private Vector3 smoothDampVelocity = Vector3.zero;
     private float camWidth, camHeight, levelMinX, levelMaxX, levelY;
@@ -32,9 +32,8 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(target != null)
+        if(target != null && state == false)
         {
-            
 
             float targetX = Mathf.Max(levelMinX, Mathf.Min(levelMaxX, target.transform.position.x));
             float targetY = target.transform.position.y +2;
