@@ -33,7 +33,6 @@ public class EnemyController : MonoBehaviour
             sprites.flipX = !sprites.flipX;
             yield return new WaitForSeconds(1f);
             sprites.flipX = !sprites.flipX;
-            Debug.Log("test");
         }
     }
 }

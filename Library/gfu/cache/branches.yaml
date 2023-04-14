@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 2
-  lastUpdatedAtString: 2023-04-13T20:57:29.542-03:00
-  initializedAtString: 2023-04-13T19:26:57.410-03:00
-  localBranches: []
+  lastUpdatedAtString: 2023-04-14T16:48:32.066-03:00
+  initializedAtString: 2023-04-14T16:48:32.059-03:00
+  localBranches:
+  - name: main
+    tracking: origin/main
   remoteBranches:
   - name: origin/HEAD
     tracking: '[None]'
@@ -28,8 +30,14 @@ MonoBehaviour:
     function: 0
     token: 
   localConfigBranches:
-    keys: []
-    values: []
+    keys:
+    - main
+    values:
+    - name: main
+      remote:
+        name: origin
+        url: https://github.com/LAtanks/SuperMarioBros.git
+      trackingBranch: main
   remoteConfigBranches:
     keys:
     - origin
