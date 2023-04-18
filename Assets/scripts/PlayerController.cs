@@ -1,12 +1,15 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.Color;
 
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Settings")]
     public Rigidbody2D rb;
     public SpriteRenderer sr;
+    public BoxCollider2D boxCollider;
     [Space(5)]
     public float gravity;
     public float gravityScale = 10;
@@ -40,6 +43,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask wallMask;
 
     bool isGround;
+    public bool isDead = false;
     public bool isCrounch;
     bool walk, walk_left, walk_right, down, jump_up, jump_down, jump, running;
     private Vector2 velocity;
@@ -52,9 +56,12 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         isGround = Physics2D.OverlapCircle(feetPos.position, checkRadiusg, groundMask);
-        CheckPlayerInput();
-        Moviment();
-        Jump();
+        if(isDead == false){
+            CheckPlayerInput();
+            Moviment();
+            Jump();
+        }
+        
     }
     void CheckPlayerInput()
     {
@@ -97,13 +104,11 @@ public class PlayerController : MonoBehaviour
                 pos.x += speed * Time.deltaTime;
                 sr.flipX = true;
             }
-
         }
         transform.localPosition = pos;
     }
     private void Jump()
     {
-
         float jumpForce = Mathf.Sqrt(this.jumpAmount * -2 * (Physics2D.gravity.y * rb.gravityScale));
 
         if (isGround)
@@ -139,7 +144,6 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
         }
-              
     }
     public void Hit()
     {
@@ -147,15 +151,11 @@ public class PlayerController : MonoBehaviour
         as_sfx.Play();
         life_count--;
         StartCoroutine(HitDamager());
-        if(life_count == 0)
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
-        }
     }
     public IEnumerator HitDamager()
     {
-        sr.color = Color.red;
+        sr.color = new Color(255f,255f,255f,0f);;
         yield return new WaitForSeconds(.10f);
-        sr.color = Color.white;
+        sr.color = new Color(255f,255f,255f,255f);
     }
 }
