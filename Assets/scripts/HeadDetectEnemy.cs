@@ -18,6 +18,7 @@ public class HeadDetectEnemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            collision.GetComponent<PlayerController>().pointCount += (int)Random.Range(10f, 50f);
             Destroy(Enemy);
         }
     }

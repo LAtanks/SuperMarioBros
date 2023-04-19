@@ -25,7 +25,7 @@ public class LuckBlock : MonoBehaviour
         audioSource.clip = LuckBlockSfx;
         audioSource.loop = false;
     }
-    private void Update()
+    private void Update()   
     {
 
         if (isTouch && isEmpaty == false)

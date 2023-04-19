@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         direction = direction * -1;
-        sprites.flipX = !sprites.flipX;
+        
         if (collision.gameObject.CompareTag("Player"))
         {
            player.Hit();

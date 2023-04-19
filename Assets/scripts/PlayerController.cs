@@ -10,11 +10,14 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public SpriteRenderer sr;
     public BoxCollider2D boxCollider;
+    public CameraFollow cam;
     [Space(5)]
     public float gravity;
     public float gravityScale = 10;
     public float fallingGravityScale = 40;
-    public int life_count;
+    public int life_count = 3;
+    public int pointCount = 0;
+    public int coinCount = 0 ;
     [Space(5)]
     public float speed;
     public float minSpeed = 3f;
