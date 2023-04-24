@@ -13,9 +13,9 @@ public class Pipe : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (statePipe == true) return;
-        if (collision.gameObject.tag == "Player" && Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+        if (collision.gameObject.tag == "Player" && Input.GetKeyUp(KeyCode.S))
         {
-            audiosource.Play();
+            //audiosource.Play();
             player.transform.position = newPos;
         }
     }

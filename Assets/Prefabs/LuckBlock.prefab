@@ -99,13 +99,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e3548080b241b8478e7ff2411cfbaa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LuckBlockNormal: {fileID: 3067564146665385777, guid: 3bd37b4ee0343d34fb12b43cd2ef67b3,
+  LuckBlockNormal: {fileID: 3067564146665385777, guid: 0f253a3f73661a24198c50281962c5f0,
     type: 3}
-  LuckBlockEmpaty: {fileID: 4930932474878289129, guid: 3bd37b4ee0343d34fb12b43cd2ef67b3,
+  LuckBlockEmpaty: {fileID: 4930932474878289129, guid: 0f253a3f73661a24198c50281962c5f0,
     type: 3}
   sr: {fileID: 7207327653822144684}
   audioSource: {fileID: 7207327653822144688}
-  LuckBlockSfx: {fileID: 8300000, guid: 9f75750b69447c1459a85194b3da5b55, type: 3}
+  LuckBlockSfx: {fileID: 8300000, guid: 44fb323c0f6002d4ab45fdb929ae30e6, type: 3}
   distance: 0.1
   boxCollider: {fileID: 7207327653822144690}
   size: {x: 1.1, y: 1}
