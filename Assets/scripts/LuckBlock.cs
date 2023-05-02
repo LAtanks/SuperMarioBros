@@ -1,45 +1,64 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
 public class LuckBlock : MonoBehaviour
 {
-    [Header("Sprite")]
-    public Sprite LuckBlockNormal;
-    public Sprite LuckBlockEmpaty;
+    //"0" Empty sprite
+    //"1" normal sprite
+    public Sprite[] LuckBlockSprites;
     public SpriteRenderer sr;
-    [Header("Sounds Effects")]
     public AudioSource audioSource;
     public AudioClip LuckBlockSfx;
-    [Header("Configs")]
-    public float distance;
-    public BoxCollider2D boxCollider;
-    RaycastHit hit;
-    bool isTouch;
-    bool isEmpaty = false;
     public Vector2 size;
+    public float bounceHeight = 0.5f;
+    public float bounceSpeed = 4f;
+    private Vector2 originalPosition;
+    
+    private bool canBounce = true;
     private void Start()
     {
-        sr.sprite = LuckBlockNormal;
-        audioSource.clip = LuckBlockSfx;
-        audioSource.loop = false;
+        originalPosition = transform.localPosition;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision){
+        if(collision.gameObject.CompareTag("Player")) LuckBlockBounce();
+    }
+
+    public void LuckBlockBounce(){
+        if(canBounce){
+            canBounce = false;
+            audioSource.clip = LuckBlockSfx;
+            audioSource.Play();
+            StartCoroutine(HitAnimation());
+        }
+    }
+
     private void Update()   
     {
 
-        if (isTouch && isEmpaty == false)
-        {
-            sr.sprite = LuckBlockEmpaty;
-            isEmpaty = true;
-            audioSource.Play();
-        }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            isTouch = true;
+    IEnumerator HitAnimation(){
+        sr.sprite = LuckBlockSprites[0];    
+
+        while(true){
+            transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y + bounceSpeed * Time.deltaTime);
+            if(transform.localPosition.y >= originalPosition.y  + bounceHeight)break;
+
+            yield return null; 
+        }
+        while(true){
+            transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y - bounceSpeed * Time.deltaTime);
+
+            if(transform.localPosition.y <= originalPosition.y){
+                
+                transform.localPosition = originalPosition;
+                break;
+            }
+
+            yield return null;
         }
     }
 }

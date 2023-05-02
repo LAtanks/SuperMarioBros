@@ -7,7 +7,8 @@ public class EnemyController : MonoBehaviour
     private int direction = -1;
     private Vector3 movement;
     public PlayerController player;
-    public SpriteRenderer sprites;
+    public SpriteRenderer sp;
+    public Sprite[] sprites;
 
     void Start(){
         StartCoroutine(SpriteSwap());
@@ -21,7 +22,7 @@ public class EnemyController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         direction = direction * -1;
-        
+
         if (collision.gameObject.CompareTag("Player"))
         {
            player.Hit();
@@ -30,9 +31,19 @@ public class EnemyController : MonoBehaviour
 
     IEnumerator SpriteSwap(){
         while(true){
-            sprites.flipX = !sprites.flipX;
-            yield return new WaitForSeconds(1f);
-            sprites.flipX = !sprites.flipX;
+            sp.flipX = sprites[0];
+            yield return new WaitForSeconds(0.30f);
+            sp.flipX = sprites[1];
+        }
+    }
+    public IEnumerator DiedAnimation(){
+        while(true){
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<Rigidbody2D>().simulated = false;
+            GetComponent<AudioSource>().Play();
+            sp.sprite = sprites[2];
+            yield return new WaitForSeconds(0.20f);
+            Destroy(gameObject);
         }
     }
 }

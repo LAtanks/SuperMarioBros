@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6557089194297839374}
   m_Layer: 0
   m_Name: Coin
-  m_TagString: Untagged
+  m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,8 +105,6 @@ MonoBehaviour:
   - {fileID: -9151090879370094308, guid: 0f253a3f73661a24198c50281962c5f0, type: 3}
   - {fileID: 7720846765856073133, guid: 0f253a3f73661a24198c50281962c5f0, type: 3}
   sr: {fileID: 6557089194297839369}
-  _as: {fileID: 0}
-  as_sfx: {fileID: 8300000, guid: 0d3654b95bbea114b994994afc27d0fc, type: 3}
 --- !u!61 &6557089194297839375
 BoxCollider2D:
   m_ObjectHideFlags: 0

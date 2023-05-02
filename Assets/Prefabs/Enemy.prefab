@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 148287074913499886}
   - component: {fileID: 148287074913499890}
   - component: {fileID: 8886732151673618074}
+  - component: {fileID: 8483668940795134104}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -130,8 +131,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: add78d95a31abed47b687a9fc6fe73bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  sprites: {fileID: 148287074855474630}
+  player: {fileID: 8267712684754196246, guid: 52cb1e1230fa1f140b403d7abd9d4755, type: 3}
+  sp: {fileID: 148287074855474630}
+  sprites:
+  - {fileID: -5494187718663218890, guid: 2f3918c8f79446e40918a1252498d387, type: 3}
+  - {fileID: -6907106616884916695, guid: 2f3918c8f79446e40918a1252498d387, type: 3}
+  - {fileID: 2899052025107409285, guid: 2f3918c8f79446e40918a1252498d387, type: 3}
 --- !u!50 &148287074913499890
 Rigidbody2D:
   serializedVersion: 4
@@ -179,6 +184,103 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6742959, y: 0.6465759}
   m_EdgeRadius: 0
+--- !u!82 &8483668940795134104
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148287074913499881}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 6294504081866693087, guid: 62d3422ff6080f443b6e174d992193a0,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 97d896b0693732547af80655d338de5e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.6
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &148287075339422075
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,6 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 181afe300416e4a49b33e361789445cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 148287074913499886}
   Enemy: {fileID: 148287074913499881}
 --- !u!61 &148287075339422073
 BoxCollider2D:

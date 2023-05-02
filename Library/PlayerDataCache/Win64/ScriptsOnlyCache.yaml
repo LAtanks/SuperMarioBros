@@ -6,21 +6,18 @@ ScriptsOnlyBuild:
     - EnemyController
     - HeadDetectEnemy
     - HudGUIController
-    - LoadScene
     - LuckBlock
+    - MainMenu
     - OnDead
     - Particle
     - Pipe
     - PlayerController
-    - SoundManager
     - Tower
     - Void
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    Unity.2D.Sprite.Editor.dll:
-    - UnityEditor.U2D.Sprites.SpriteEditorWindow
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
@@ -61,10 +58,15 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.Dropdown
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
   sceneClasses:
     Assets/Scenes/Kingdom1.unity:
     - Class: 1
@@ -74,6 +76,8 @@ ScriptsOnlyBuild:
     - Class: 20
       Script: {instanceID: 0}
     - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
       Script: {instanceID: 0}
     - Class: 28
       Script: {instanceID: 0}
@@ -95,48 +99,50 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 95
       Script: {instanceID: 0}
+    - Class: 102
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 678}
+      Script: {instanceID: 680}
     - Class: 114
-      Script: {instanceID: 1512}
+      Script: {instanceID: 1514}
     - Class: 114
-      Script: {instanceID: 1588}
+      Script: {instanceID: 1590}
     - Class: 114
-      Script: {instanceID: 1734}
+      Script: {instanceID: 1736}
     - Class: 114
-      Script: {instanceID: 1906}
+      Script: {instanceID: 1908}
     - Class: 114
-      Script: {instanceID: 2408}
+      Script: {instanceID: 2410}
     - Class: 114
-      Script: {instanceID: 2494}
+      Script: {instanceID: 2496}
     - Class: 114
-      Script: {instanceID: 2774}
+      Script: {instanceID: 2778}
     - Class: 114
-      Script: {instanceID: 2846}
+      Script: {instanceID: 2850}
     - Class: 114
-      Script: {instanceID: 2954}
+      Script: {instanceID: 2958}
     - Class: 114
-      Script: {instanceID: 2982}
+      Script: {instanceID: 2986}
     - Class: 114
-      Script: {instanceID: 3006}
+      Script: {instanceID: 3010}
     - Class: 114
-      Script: {instanceID: 3030}
+      Script: {instanceID: 3034}
     - Class: 114
-      Script: {instanceID: 3198}
+      Script: {instanceID: 3202}
     - Class: 114
-      Script: {instanceID: 3292}
+      Script: {instanceID: 3296}
     - Class: 114
-      Script: {instanceID: 3450}
+      Script: {instanceID: 3454}
     - Class: 114
-      Script: {instanceID: 3774}
+      Script: {instanceID: 3778}
     - Class: 114
-      Script: {instanceID: 3980}
+      Script: {instanceID: 3984}
     - Class: 114
-      Script: {instanceID: 5098}
+      Script: {instanceID: 5104}
     - Class: 114
-      Script: {instanceID: 5186}
+      Script: {instanceID: 5192}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -193,37 +199,45 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1512}
+      Script: {instanceID: 1514}
     - Class: 114
-      Script: {instanceID: 1782}
+      Script: {instanceID: 1706}
     - Class: 114
-      Script: {instanceID: 1906}
+      Script: {instanceID: 1784}
     - Class: 114
-      Script: {instanceID: 2322}
+      Script: {instanceID: 1908}
     - Class: 114
-      Script: {instanceID: 2330}
+      Script: {instanceID: 2324}
     - Class: 114
-      Script: {instanceID: 2774}
+      Script: {instanceID: 2332}
     - Class: 114
-      Script: {instanceID: 2954}
+      Script: {instanceID: 2778}
     - Class: 114
-      Script: {instanceID: 3006}
+      Script: {instanceID: 2958}
     - Class: 114
-      Script: {instanceID: 3198}
+      Script: {instanceID: 3010}
     - Class: 114
-      Script: {instanceID: 3450}
+      Script: {instanceID: 3202}
     - Class: 114
-      Script: {instanceID: 3518}
+      Script: {instanceID: 3454}
     - Class: 114
-      Script: {instanceID: 3584}
+      Script: {instanceID: 3466}
     - Class: 114
-      Script: {instanceID: 4776}
+      Script: {instanceID: 3588}
     - Class: 114
-      Script: {instanceID: 4860}
+      Script: {instanceID: 4438}
     - Class: 114
-      Script: {instanceID: 5026}
+      Script: {instanceID: 4442}
     - Class: 114
-      Script: {instanceID: 5442}
+      Script: {instanceID: 4680}
+    - Class: 114
+      Script: {instanceID: 4866}
+    - Class: 114
+      Script: {instanceID: 4890}
+    - Class: 114
+      Script: {instanceID: 5032}
+    - Class: 114
+      Script: {instanceID: 5448}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -411,7 +425,7 @@ ScriptsOnlyBuild:
     className: CinemachinePixelPerfect
   - hash:
       serializedVersion: 2
-      Hash: 54dd34e802d0724ea4eb8cad5aaf1d41
+      Hash: 14c5302f92f8430df00396350864a1a8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LuckBlock
@@ -433,6 +447,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: Benchmark02
+  - hash:
+      serializedVersion: 2
+      Hash: f26449d1e0e1b1cddf0e73781cfa1ead
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ControllerDetection
   - hash:
       serializedVersion: 2
       Hash: a1aa98c78061c6f03a8c124cda576e67
@@ -495,7 +515,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: cb8f725193fa24f4f5a11f36a8d8ce41
+      Hash: 5eb251803b43d22cb655ee6d85231b6c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -507,7 +527,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: ccf37515611b2d3d75145aa0edf4e006
+      Hash: 2afa9ba7e3b7042446324af13ea2871a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyController
@@ -555,7 +575,7 @@ ScriptsOnlyBuild:
     className: LimbSolver2D
   - hash:
       serializedVersion: 2
-      Hash: f81d9164a315b18bfa4c9fee8394defa
+      Hash: 16636bad73c24e9c1d725ddcee8cddda
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Coin
@@ -777,6 +797,12 @@ ScriptsOnlyBuild:
     className: SpriteLibrary
   - hash:
       serializedVersion: 2
+      Hash: 508528702e965b3fcd1de0ab288c9ad4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MainMenu
+  - hash:
+      serializedVersion: 2
       Hash: a81d4c2c1cf3ad164d277d927a193679
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -909,7 +935,7 @@ ScriptsOnlyBuild:
     className: SpriteSkinEntity
   - hash:
       serializedVersion: 2
-      Hash: c26b216cd49b7fc33d1d96b1057f6348
+      Hash: 14d9fdab4060f81e197ebc79d67b772e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HeadDetectEnemy
@@ -1011,6 +1037,12 @@ ScriptsOnlyBuild:
     className: BufferManager
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Mushroom
+  - hash:
+      serializedVersion: 2
       Hash: b6514f552bd2ee9e736a5678aa7f7de3
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -1057,12 +1089,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: TMP_TextEventCheck
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Mushroom
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu.unity

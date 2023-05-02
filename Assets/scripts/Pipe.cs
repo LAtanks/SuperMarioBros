@@ -15,8 +15,9 @@ public class Pipe : MonoBehaviour
         if (statePipe == true) return;
         if (collision.gameObject.tag == "Player" && Input.GetKeyUp(KeyCode.S))
         {
-            //audiosource.Play();
+            audiosource.Play();
             player.transform.position = newPos;
+            statePipe = true;
         }
     }
 }

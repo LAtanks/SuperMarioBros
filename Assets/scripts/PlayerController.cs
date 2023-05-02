@@ -1,9 +1,6 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.Color;
-
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Settings")]
@@ -32,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip invicibilityStx;
     public AudioClip jumpSfx;
     public AudioClip ouchSfx;
+    public AudioClip coinSfx;
     public AudioSource as_sfx;
     public AudioSource as_stx;
 
@@ -64,7 +62,6 @@ public class PlayerController : MonoBehaviour
             Moviment();
             Jump();
         }
-        
     }
     void CheckPlayerInput()
     {
@@ -85,7 +82,6 @@ public class PlayerController : MonoBehaviour
         jump_down = inputDown_jump;
         jump_up = inputUp_jump;
     }
-
     private void Moviment()
     {
         Vector3 pos = transform.localPosition;
@@ -148,6 +144,19 @@ public class PlayerController : MonoBehaviour
             isJumping = false;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+        if (collision.gameObject.CompareTag("Coin"))
+        {       
+            as_sfx.clip = coinSfx;
+            as_sfx.Play();
+            coinCount++;
+            Destroy(collision.gameObject);
+        }
+    }
+
     public void Hit()
     {
         as_sfx.clip = ouchSfx;
